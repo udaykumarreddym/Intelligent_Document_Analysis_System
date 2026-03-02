@@ -139,24 +139,10 @@ This will:
 - Run both Frontend and backend on `port 8080`
 - Implements the solution
 
-# Note to the Judges
-
-The text selctions work as follows
-
-- Select the text and single click the input box, the text will be automatically dropped there.
-
-- ADOBE_EMBED_API_KEY="0ad4e2cfee304a8d9d32232d3dd9729f"
-
-- Please provide GEMINI_API_KEY in while running the docker image
-
-- The docker image might take more time to create.
-
 🙋 Author
 
 M Uday Kumar Reddy
 
 Y Rukmangar
-
-Web Alchemists
 
 B.Tech CSE (Data Science)
