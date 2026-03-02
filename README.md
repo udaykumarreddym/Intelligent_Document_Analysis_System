@@ -1,18 +1,5 @@
-# 📘 Final Round – Adobe India Hackathon
+# 📘 Intelligent document analysis system
 > An intelligent document analysis system that helps users extract knowledge, connect ideas across documents, and consume insights in multiple formats — including interactive text and AI-generated podcasts.
-
-## 💡 Problem Statement
-
-Professionals and students often need to connect new knowledge with what they’ve already studied.
-But challenges remain:
-
-- 📄 Reading long PDFs is slow
-
-- 🔎 Insights are buried inside documents
-
-- 🔗 Linking knowledge across PDFs is hard
-
-- 🚫 Accessibility is limited to only reading
 
 ## 🧠 Our Approach
 
