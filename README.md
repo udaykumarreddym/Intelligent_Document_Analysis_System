@@ -19,6 +19,7 @@ Our primary uproach to the problem statement is
 
 7. These relevant sections are passed to insight generator which generates insights using `Gemini AI`
 
+8. The relevant sections are also passed to podcast generator which calls `Gemini AI` to generate podcast script. This script is generated into audio using `AZURE TTS`
 
 ## 🌟 Key Features
 
@@ -29,6 +30,8 @@ Our primary uproach to the problem statement is
 ✅ Semantic search & snippet navigation
 
 ✅ AI insights for deeper understanding
+
+✅ Podcast generation for accessibility & multitasking
 
 ✅ Clean UI with dedicated pages for each step
 
@@ -54,6 +57,10 @@ System shows related sections from previously read PDFs
 
 AI (Gemini) generates contextual insights from the selection
 
+#### Step 6 – Podcast
+
+Insights converted to podcast audio for accessibility 🎧
+
 
 ## 📂 System Overview
 
@@ -71,7 +78,7 @@ Pages:
 
 Components:
 
-`PDFViewer`, `InsightsPanel`, `SnippetNavigator`, `Selected Text Display`
+`PDFViewer`, `InsightsPanel`, `SnippetNavigator`, `PodcastPlayer`,`Selected Text Display`
 
 ⚙️ Backend (FastAPI + AI Services)
 
@@ -82,6 +89,8 @@ Routers:
 `search.py` → Retrieve related sections
 
 `insights.py` → AI insights (Gemini)
+
+`podcast.py` → Podcast audio (Google + Azure TTS)
 
 
 Services:
@@ -102,6 +111,7 @@ Services:
 | `POST` | `/ingest/upload_bulk`   | Upload knowledge PDFs            |
 | `POST` | `/search/`              | Get related sections             |
 | `POST` | `/insights/`            | Generate insights from selection |
+| `POST` | `/podcast/`             | Generate podcast audio           |
 
 ## 🐳 How to Build and Run (Documentation Only)
 
@@ -118,7 +128,10 @@ docker run
 -e ADOBE_EMBED_API_KEY=<ADOBE_EMBED_API_KEY> 
 -e LLM_PROVIDER=gemini 
 -e GEMINI_API_KEY="<YOUR_ACTUAL_GEMINI_API_KEY>" 
--e GEMINI_MODEL=gemini-1.5-flash 
+-e GEMINI_MODEL=gemini-1.5-flash
+-e TTS_PROVIDER=azure 
+-e AZURE_TTS_KEY="TTS_KEY" 
+-e AZURE_TTS_ENDPOINT="TTS_ENDPOINT" 
 -p 8080:8080 
 yourimageidentifier
 ```
